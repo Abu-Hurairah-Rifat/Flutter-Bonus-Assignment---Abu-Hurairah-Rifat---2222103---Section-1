@@ -5,7 +5,8 @@ class CoreInputWidget extends StatefulWidget {
   final String labelText;
   final int? maxLine;
   final TextInputType? keyboardType;
-  const CoreInputWidget({super.key, required this.controller, required this.labelText, this.maxLine, this.keyboardType});
+  final String? Function(String?)? validator;
+  const CoreInputWidget({super.key, required this.controller, required this.labelText, this.maxLine, this.keyboardType, this.validator});
 
   @override
   State<CoreInputWidget> createState() => _CoreInputWidgetState();
@@ -23,6 +24,13 @@ class _CoreInputWidgetState extends State<CoreInputWidget> {
                   prefixIcon: Icon(Icons.coffee),
                   border: OutlineInputBorder(),
                 ),
+                validator: widget.validator,
               );
   }
 }
+
+
+// String? Function (String?)  ?
+
+// String? => Return type is string or null
+// (String?) => Function takes a string or null as input

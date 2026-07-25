@@ -21,7 +21,6 @@ class _HomePageState extends State<HomePage> {
 
 
   int _coffeeCount = 0;
-  final CoffeeStateManagement coffeeStateManagement = CoffeeStateManagement();
 
   void incrememntCoffeeCount() {
     _coffeeCount++;
@@ -31,12 +30,12 @@ class _HomePageState extends State<HomePage> {
 
   void navigateToCoffeeRecordsScreen() {
    Navigator.of(context)
-   .push(MaterialPageRoute(builder: (context) =>  CoffeRecordsScreen(coffeeStateManagement: coffeeStateManagement,)));
+   .push(MaterialPageRoute(builder: (context) =>  CoffeRecordsScreen()));
   }
 
    void navigateToCreateCoffeeRecordScreen() {
    Navigator.of(context)
-   .push(MaterialPageRoute(builder: (context) =>  CreateCoffeeRecordScreen(coffeeStateManagement: coffeeStateManagement,)));
+   .push(MaterialPageRoute(builder: (context) =>  CreateCoffeeRecordScreen()));
   }
 
 

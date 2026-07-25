@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:summer_iub_app/models/coffee_records_model.dart';
 import 'package:summer_iub_app/state_management/coffee_state_management.dart';
 import 'package:summer_iub_app/utility/vlaidators.dart';
@@ -6,8 +7,7 @@ import 'package:summer_iub_app/widgets/app_backgroud_design_widget.dart';
 import 'package:summer_iub_app/widgets/core_input_widget.dart';
 
 class CreateCoffeeRecordScreen extends StatelessWidget {
-  final CoffeeStateManagement coffeeStateManagement;
-  const CreateCoffeeRecordScreen({super.key, required this.coffeeStateManagement});
+  const CreateCoffeeRecordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,8 @@ class CreateCoffeeRecordScreen extends StatelessWidget {
     final TextEditingController descriptionController = TextEditingController();
 
     final formKey = GlobalKey<FormState>();
+
+    final csm = Provider.of<CoffeeStateManagement>(context, listen: false);
 
 
 
@@ -78,7 +80,7 @@ class CreateCoffeeRecordScreen extends StatelessWidget {
                         date: DateTime.now(),
                       );
             
-                      coffeeStateManagement.addCoffeeRecord(newRecord);
+                      csm.addCoffeeRecord(newRecord);
             
             
                       titleController.clear();

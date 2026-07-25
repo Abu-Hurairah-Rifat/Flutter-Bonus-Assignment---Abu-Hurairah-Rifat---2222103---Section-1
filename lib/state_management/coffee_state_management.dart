@@ -1,6 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:summer_iub_app/models/coffee_records_model.dart';
 
-class CoffeeStateManagement {
+
+class CoffeeStateManagement with ChangeNotifier {
   List<CoffeeRecordsModel> items = [];
 
   void addData(){
@@ -13,6 +15,8 @@ class CoffeeStateManagement {
         date: DateTime.now(),
       )
     );
+
+    notifyListeners();
   }
 
 
@@ -26,5 +30,8 @@ class CoffeeStateManagement {
         date: coffeeRecord.date,
       )
       );
+    notifyListeners();
   }
 }
+
+

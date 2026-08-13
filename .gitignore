@@ -169,3 +169,5 @@ tickets.md
 
 # FVM Version Cache
 .fvm/
+
+.fake

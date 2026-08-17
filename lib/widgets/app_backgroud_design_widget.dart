@@ -1,25 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:summer_iub_app/utility/constant.dart';
 
 class AppBackgroudDesignWidget extends StatelessWidget {
   final Widget? child;
-
 
   const AppBackgroudDesignWidget({super.key, this.child});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(AppConstant.homePageBackgroundImage),
-            fit: BoxFit.cover,
-          )
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFFF5EDE8), Color(0xFFE7D7C9)],
         ),
-        child: Container(
-          color: Colors.white.withAlpha(150),
-          child: child,
-        )
+      ),
+      child: Container(color: Colors.white.withAlpha(150), child: child),
     );
   }
 }
